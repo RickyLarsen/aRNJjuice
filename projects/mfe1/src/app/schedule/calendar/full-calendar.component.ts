@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthLibService } from 'auth-lib';
+import { AppointmentService } from 'projects/appointment/src/public-api';
 
 @Component({
   selector: 'app-full-calendar',
@@ -7,10 +7,10 @@ import { AuthLibService } from 'auth-lib';
   styleUrls: ['./full-calendar.component.css'],
 })
 export class FullCalendarComponent {
-  user = this.authService.user;
+  public appointments = this.appointmentService.appointments;
 
-  constructor(private authService: AuthLibService) {
-    console.log('user');
-    console.log(this.user);
+  constructor(private appointmentService: AppointmentService) {
+    console.log('appointments');
+    console.log(this.appointments);
   }
 }

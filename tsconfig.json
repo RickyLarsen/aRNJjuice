@@ -3,7 +3,7 @@
   "compilerOptions": {
     "paths": {
       "auth-lib": [
-        "projects/auth-lib/src/public-api.ts"
+        "projects/appointment/src/public-api.ts"
       ]
     },
     "baseUrl": "./",

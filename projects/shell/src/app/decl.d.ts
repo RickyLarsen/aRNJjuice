@@ -1,1 +1,1 @@
-declare module 'auth/lib';
+

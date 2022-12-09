@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthLibService } from 'auth-lib';
+import { AppointmentService } from 'projects/appointment/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,5 @@ import { AuthLibService } from 'auth-lib';
 })
 export class AppComponent {
   title = 'shell';
-  constructor(private service: AuthLibService) {
-    this.service.login('TrickyNicky', null);
-  }
+  constructor() {}
 }
