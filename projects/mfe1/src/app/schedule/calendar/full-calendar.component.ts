@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AppointmentService } from 'projects/appointment/src/public-api';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Appointment } from '../../../../../appointment/models/appointment';
 
 @Component({
   selector: 'app-full-calendar',
@@ -7,10 +7,12 @@ import { AppointmentService } from 'projects/appointment/src/public-api';
   styleUrls: ['./full-calendar.component.css'],
 })
 export class FullCalendarComponent {
-  public appointments = this.appointmentService.appointments;
-
-  constructor(private appointmentService: AppointmentService) {
-    console.log('appointments');
-    console.log(this.appointments);
+  @Input() appointments: Appointment[]
+  private count = 0
+  constructor() {
+  }
+  @Output() public addAppointmentEvent: EventEmitter<Appointment> = new EventEmitter<Appointment>()
+  public addAppointment() {
+    this.addAppointmentEvent.emit({title: `Hi Mom ${'!'.repeat(this.count)}`})
   }
 }
