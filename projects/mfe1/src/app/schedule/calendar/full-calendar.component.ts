@@ -7,12 +7,13 @@ import { Appointment } from '../../../../../appointment/models/appointment';
   styleUrls: ['./full-calendar.component.css'],
 })
 export class FullCalendarComponent {
-  @Input() appointments: Appointment[]
+  @Input() public appointments: Appointment[]
+  @Output() public addAppointmentEvent = new EventEmitter()
   private count = 0
   constructor() {
   }
-  @Output() public addAppointmentEvent: EventEmitter<Appointment> = new EventEmitter<Appointment>()
   public addAppointment() {
-    this.addAppointmentEvent.emit({title: `Hi Mom ${'!'.repeat(this.count)}`})
+    this.addAppointmentEvent.emit({title: `Hi Mom${'!'.repeat(this.count++)}`})
+    console.log('adding an appointment')
   }
 }

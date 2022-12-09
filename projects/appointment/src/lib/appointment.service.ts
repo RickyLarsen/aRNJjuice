@@ -18,5 +18,6 @@ export class AppointmentService {
 
   public addAppointment(appointment: Appointment): void {
     this._appointments.push(appointment);
+    console.log('in appointment service. appointments are: ', this._appointments)
   }
 }

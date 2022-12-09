@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppointmentService } from 'auth-lib';
 import { Appointment } from 'projects/appointment/models/appointment';
-import { AppointmentService } from 'projects/appointment/src/public-api';
+// import { AppointmentService } from 'projects/appointment/src/public-api';
 import { BehaviorSubject } from 'rxjs';
 import { FullCalendarComponent } from '../calendar/full-calendar.component';
 
@@ -11,7 +12,11 @@ import { FullCalendarComponent } from '../calendar/full-calendar.component';
 })
 export class ScheduleIntegrationComponent implements OnInit {
 
-  public appointments = this.appointmentService.appointments ?? [];
+  // public appointments = this.appointmentService.appointments ?? [];
+  public get appointments(): Appointment[] {
+    console.log('calling get appointments. appointments are: ', this.appointmentService.appointments)
+    return this.appointmentService.appointments
+  }
   private defaultAddAppointmentConfig: Appointment = {title: ''}
   public addAppointmentSubject: BehaviorSubject<Appointment> = new BehaviorSubject<Appointment>(this.defaultAddAppointmentConfig);
 
@@ -24,6 +29,7 @@ export class ScheduleIntegrationComponent implements OnInit {
   }
 
   public addAppointment(appointment: Appointment){
+    console.log('In Schedule Integration Component. adding appointment: ', appointment)
     this.addAppointmentSubject.next(appointment)
   }
 }

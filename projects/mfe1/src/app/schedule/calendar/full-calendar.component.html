@@ -1,4 +1,5 @@
-<div *ngFor="let appointment of appointments"> Appointments:
+<button (click)="addAppointment()">Add An Appointment</button>
+<p>Appointments:</p>
+<div *ngFor="let appointment of appointments"> 
   <div> {{ appointment.title }}</div>
-  <button (click)="addAppointment()">Add An Appointment</button>
 </div>
