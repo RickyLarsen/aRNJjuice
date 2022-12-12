@@ -89,6 +89,11 @@
   width: 120px;
   z-index: 1;
 }
+.pokeSilloute {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
 
 @keyframes ball-bounce {
   0% {
