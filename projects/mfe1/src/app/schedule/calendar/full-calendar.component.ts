@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Appointment, EVEE_TYPES } from '../../../../../appointment/models/appointment';
 
-=======
-import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import { Appointment } from '../../../../../appointment/models/appointment';
->>>>>>> a1500ee1f5ba723aa6f9db4e40a7bf01bc8e612d
 
 @Component({
   selector: 'app-full-calendar',
