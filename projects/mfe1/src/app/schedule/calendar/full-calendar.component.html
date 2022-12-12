@@ -22,5 +22,17 @@
   <div class="ballShadow"></div>
 </section>
 <section class="wrap" *ngIf="eeveeTime">
-  <img src="../../../assets/eevee.png" />
+  <img src="../../../assets/eevee.png" *ngIf="eveeState == EVEETYPES.BASE" />
+  <img
+    src="../../../assets/flareon.png"
+    *ngIf="eveeState == EVEETYPES.FLAREON"
+  />
+  <img
+    src="../../../assets/jolteon.png"
+    *ngIf="eveeState == EVEETYPES.JOLTEON"
+  />
+  <img
+    src="../../../assets/vaporeon.png"
+    *ngIf="eveeState == EVEETYPES.VAPOREON"
+  />
 </section>
