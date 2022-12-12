@@ -4,6 +4,12 @@ import { Appointment } from 'projects/appointment/models/appointment';
 import { EVEE_TYPES } from '../../../../appointment/models/appointment';
 import { ScheduleModuleService } from '../../services/remote-modules/remote-module.service';
 
+enum STONE_TYPES {
+  DEFAULT = 'none',
+  FIRE = 'fire',
+  THUNDER = 'thunder',
+  WATER = 'water',
+}
 @Component({
   selector: 'app-placeholder',
   templateUrl: './placeholder.component.html',
@@ -17,11 +23,17 @@ export class PlaceholderComponent implements OnInit {
     private appointmentService: AppointmentService
   ) {}
   private scheduleRef: any;
+  private _selectedStone: STONE_TYPES = STONE_TYPES.DEFAULT
+  public get selectedStone(){return this._selectedStone}
+  public set selectedStone(newStone: STONE_TYPES){this._selectedStone = newStone}
+  public STONETYPES = STONE_TYPES
+
 
   ngOnInit() {
     this.appointmentService.addAppointment({ title: 'Appointment from shell' });
     this.load();
   }
+  public 
   async load() {
     const scheduleComponent =
       await this.scheduleService.getScheduleComponentRef();
@@ -35,7 +47,11 @@ export class PlaceholderComponent implements OnInit {
           'in Placeholder Component.ts (shell). Evee wishes to evolve to: ',
           evoloutionType
         );
-        this.appointmentService.eveeState = evoloutionType
+        if((evoloutionType === EVEE_TYPES.FLAREON && this._selectedStone === STONE_TYPES.FIRE) || 
+        (evoloutionType === EVEE_TYPES.JOLTEON && this._selectedStone === STONE_TYPES.THUNDER) || 
+        (evoloutionType === EVEE_TYPES.VAPOREON && this._selectedStone === STONE_TYPES.WATER)){
+          this.appointmentService.eveeState = evoloutionType
+        }
       }
     );
   }
