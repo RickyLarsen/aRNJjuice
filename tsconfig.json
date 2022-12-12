@@ -5,9 +5,6 @@
       "auth-lib": [
         "projects/appointment/src/public-api.ts"
       ],
-      "schedules-lib": [
-        "projects/mfe1/src/app/schedule/schedule-integration/schedule-integration-component.ts"
-      ],
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

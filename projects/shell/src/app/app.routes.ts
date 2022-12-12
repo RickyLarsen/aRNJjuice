@@ -2,6 +2,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -9,11 +10,15 @@ export const APP_ROUTES: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
   },
+  {
+    path: 'pokemon/eevee',
+    component: PlaceholderComponent,
+  },
 
   // Your route here:
 
   {
-    path: 'schedule',
+    path: 'pokemon',
     loadChildren: () =>
       loadRemoteModule({
         type: 'manifest',
