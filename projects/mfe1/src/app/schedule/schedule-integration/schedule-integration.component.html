@@ -2,6 +2,8 @@
 <div>
   <app-full-calendar
     [appointments]="appointments"
+    [eveeState]="eveeState"
     (addAppointmentEvent)="addAppointment($event)"
+    (evolveEveeEvent)="evolveEvee($event)"
   ></app-full-calendar>
 </div>
