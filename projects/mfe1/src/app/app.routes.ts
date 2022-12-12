@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { ScheduleIntegrationComponent } from './schedule/schedule-integration/schedule-integration.component';
 
 export const APP_ROUTES: Routes = [
-    { path: '', component: HomeComponent, pathMatch: 'full'}
+  { path: '', component: ScheduleIntegrationComponent, pathMatch: 'full' },
 ];
