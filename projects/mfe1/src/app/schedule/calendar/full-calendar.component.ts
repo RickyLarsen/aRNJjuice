@@ -18,6 +18,10 @@ export class FullCalendarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.reset();
+  }
+
+  public reset(): void {
     this.eeveeTime = false;
     setTimeout(() => {
       this.eeveeTime = true;
@@ -30,12 +34,15 @@ export class FullCalendarComponent implements OnInit {
     switch (type) {
       case EVEE_TYPES.FLAREON:
         this.evolveEveeEvent.emit(EVEE_TYPES.FLAREON);
+        this.reset();
         break;
       case EVEE_TYPES.JOLTEON:
         this.evolveEveeEvent.emit(EVEE_TYPES.JOLTEON);
+        this.reset();
         break;
       case EVEE_TYPES.VAPOREON:
         this.evolveEveeEvent.emit(EVEE_TYPES.VAPOREON);
+        this.reset();
         break;
     }
   }
