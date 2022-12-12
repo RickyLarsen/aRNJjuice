@@ -2,3 +2,15 @@
     width: 75px;
     height: 75px;
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stones-toolbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
