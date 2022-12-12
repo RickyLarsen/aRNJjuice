@@ -18,14 +18,14 @@ export class FullCalendarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.reset();
+    this.reset(2500);
   }
 
-  public reset(): void {
+  public reset(time = 1250): void {
     this.eeveeTime = false;
     setTimeout(() => {
       this.eeveeTime = true;
-    }, 2500);
+    }, time);
   }
 
   public evolveEvee(type: EVEE_TYPES): void {
