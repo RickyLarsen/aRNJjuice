@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { AppointmentService } from 'auth-lib';
 import { Appointment } from 'projects/appointment/models/appointment';
+import { EVEE_TYPES } from '../../../../appointment/models/appointment';
 import { ScheduleModuleService } from '../../services/remote-modules/remote-module.service';
 
 @Component({
@@ -28,13 +29,13 @@ export class PlaceholderComponent implements OnInit {
     console.log('ref is: ');
     console.log(ref);
     this.scheduleRef = ref.instance;
-    this.scheduleRef.addAppointmentSubject?.subscribe(
-      (appointment: Appointment) => {
+    this.scheduleRef.evolveEveeSubject?.subscribe(
+      (evoloutionType: EVEE_TYPES) => {
         console.log(
-          'in Placeholder Component.ts (shell). A new appointment has been emitted: ',
-          appointment
+          'in Placeholder Component.ts (shell). Evee wishes to evolve to: ',
+          evoloutionType
         );
-        this.appointmentService.addAppointment(appointment);
+        this.appointmentService.eveeState = evoloutionType
       }
     );
   }

@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Appointment } from 'projects/appointment/models/appointment';
+import { EVEE_TYPES } from '../../models/appointment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppointmentService {
   private _appointments: Appointment[] = [];
+  private _eveeState: EVEE_TYPES = EVEE_TYPES.BASE
 
   public get appointments(): Appointment[] {
     return this._appointments;
+  }
+  public get eveeState() {
+    return this._eveeState
+  }
+  public set eveeState(evType: EVEE_TYPES){
+    this._eveeState = evType
   }
 
   constructor() {
