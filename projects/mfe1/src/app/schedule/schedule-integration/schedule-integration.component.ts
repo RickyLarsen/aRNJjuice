@@ -34,10 +34,7 @@ export class ScheduleIntegrationComponent implements OnInit {
     this.addAppointmentSubject.next(appointment);
   }
   public evolveEvee(evolveType: EVEE_TYPES) {
-    console.log(
-      'In Schedule Integration Component. sending evees wish: ',
-      evolveType
-    );
+    console.log('sending evees wish: ', evolveType);
     this.evolveEveeSubject.next(evolveType);
   }
 }
