@@ -3,13 +3,13 @@
 </div>
 <img src="assets/red.jpeg" />
 <div class="stones-toolbar">
-  <div [ngClass]="[selectedStone === STONETYPES.FIRE ? 'selected' : '']">
+  <div [ngClass]="['stones-container', selectedStone === STONETYPES.FIRE ? 'selected' : '']">
     <img (click)="selectedStone = STONETYPES.FIRE" class="stones" src="assets/fire_stone.png" />
   </div>
-  <div [ngClass]="[selectedStone === STONETYPES.THUNDER ? 'selected' : '']">
+  <div [ngClass]="['stones-container', selectedStone === STONETYPES.THUNDER ? 'selected' : '']">
     <img (click)="selectedStone = STONETYPES.THUNDER" class="stones" src="assets/thunder_stone.png" />
   </div>
-  <div [ngClass]="[selectedStone === STONETYPES.WATER ? 'selected' : '']">
+  <div [ngClass]="['stones-container', selectedStone === STONETYPES.WATER ? 'selected' : '']">
     <img (click)="selectedStone = STONETYPES.WATER" class="stones" src="assets/water_stone.png" />
   </div>
 </div>

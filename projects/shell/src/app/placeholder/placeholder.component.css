@@ -1,10 +1,12 @@
 .stones {
     width: 75px;
     height: 75px;
+  padding: 1em;
 }
 
 .selected {
   background-color: #999999;
+  border-radius: 1em;
 }
 
 .header {
