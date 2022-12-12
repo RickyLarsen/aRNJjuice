@@ -1,5 +1,12 @@
-<button (click)="addAppointment()">Add An Appointment</button>
-<p>Appointments:</p>
-<div *ngFor="let appointment of appointments"> 
-  <div> {{ appointment.title }}</div>
-</div>
+<section class="wrap" *ngIf="!eeveeTime">
+  <div class="ball">
+    <div class="ball__top"></div>
+    <div class="ball__button"></div>
+    <div class="ball__bottom"></div>
+  </div>
+  <div class="ballShadow"></div>
+</section>
+<section class="wrap" *ngIf="eeveeTime">
+  <img src="assets/eevee.png">
+</section>
+
