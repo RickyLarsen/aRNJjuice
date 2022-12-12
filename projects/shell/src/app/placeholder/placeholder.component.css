@@ -3,6 +3,10 @@
     height: 75px;
 }
 
+.selected {
+  background-color: #999999;
+}
+
 .header {
   display: flex;
   justify-content: center;
