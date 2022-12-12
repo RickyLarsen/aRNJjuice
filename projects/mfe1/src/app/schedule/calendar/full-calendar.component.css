@@ -1,3 +1,13 @@
+
+
+.pokeSilloute {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+}
+
+/* v v v Pokeball v v v */
+
 .wrap {
   align-items: center;
   background-color: #eee;
@@ -88,11 +98,6 @@
   position: relative;
   width: 120px;
   z-index: 1;
-}
-.pokeSilloute {
-    background-color: white;
-    width: 100px;
-    height: 100px;
 }
 
 @keyframes ball-bounce {

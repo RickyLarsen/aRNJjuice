@@ -26,7 +26,7 @@ export class FullCalendarComponent implements OnInit {
 
   public evolveEvee(type: EVEE_TYPES): void {
     console.log('I am little evee and I want to evolve into: ', type);
-    console.log('\'Evee\'s state is: \'', this.eveeState);
+    console.log('Evee\'s state is: ', this.eveeState);
     switch (type) {
       case EVEE_TYPES.FLAREON:
         this.evolveEveeEvent.emit(EVEE_TYPES.FLAREON);
