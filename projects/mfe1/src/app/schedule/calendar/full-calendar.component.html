@@ -1,6 +1,6 @@
-<button (click)="evolveEvee(EVEETYPES.FLAREON)">Flareon</button>
-<button (click)="evolveEvee(EVEETYPES.JOLTEON)">Jolteon</button>
-<button (click)="evolveEvee(EVEETYPES.VAPOREON)">Vaporeon</button>
+<img class="pokeSilloute" src="assets/flareonSilloute.png" (click)="evolveEvee(EVEETYPES.FLAREON)"/>
+<img class="pokeSilloute" src="assets/jolteonSilloute.png" (click)="evolveEvee(EVEETYPES.JOLTEON)"/>
+<img class="pokeSilloute" src="assets/vaporeonSilloute.png" (click)="evolveEvee(EVEETYPES.VAPOREON)">
 <section class="wrap" *ngIf="!eeveeTime">
   <div class="ball">
     <div class="ball__top"></div>
@@ -12,4 +12,3 @@
 <section class="wrap" *ngIf="eeveeTime">
   <img src="assets/eevee.png">
 </section>
-
