@@ -11,22 +11,18 @@ import { EVEE_TYPES } from '../../../../../appointment/models/appointment';
 })
 export class ScheduleIntegrationComponent implements OnInit {
   public get appointments(): Appointment[] {
-    console.log(
-      'calling get appointments. appointments are: ',
-      this.appointmentService.appointments
-    );
     return this.appointmentService.appointments;
   }
   public get eveeState(): EVEE_TYPES {
-    return this.appointmentService.eveeState
+    return this.appointmentService.eveeState;
   }
   private defaultAddAppointmentConfig: Appointment = { title: '' };
   public addAppointmentSubject: BehaviorSubject<Appointment> =
     new BehaviorSubject<Appointment>(this.defaultAddAppointmentConfig);
-  public evolveEveeSubject: BehaviorSubject<EVEE_TYPES> = new BehaviorSubject<EVEE_TYPES>(EVEE_TYPES.BASE)
+  public evolveEveeSubject: BehaviorSubject<EVEE_TYPES> =
+    new BehaviorSubject<EVEE_TYPES>(EVEE_TYPES.BASE);
 
-  constructor(private appointmentService: AppointmentService) {
-  }
+  constructor(private appointmentService: AppointmentService) {}
 
   ngOnInit(): void {}
 
@@ -37,11 +33,11 @@ export class ScheduleIntegrationComponent implements OnInit {
     );
     this.addAppointmentSubject.next(appointment);
   }
-  public evolveEvee(evolveType: EVEE_TYPES){
-     console.log(
+  public evolveEvee(evolveType: EVEE_TYPES) {
+    console.log(
       'In Schedule Integration Component. sending evees wish: ',
       evolveType
     );
-    this.evolveEveeSubject.next(evolveType)
+    this.evolveEveeSubject.next(evolveType);
   }
 }
