@@ -1,8 +1,5 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import {
-  Appointment,
-  EVEE_TYPES,
-} from '../../../../../appointment/models/appointment';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Appointment, EVEE_TYPES,} from '../../../../../appointment/models/appointment';
 
 @Component({
   selector: 'app-full-calendar',
@@ -32,24 +29,22 @@ export class FullCalendarComponent implements OnInit {
   public evolveEvee(type: EVEE_TYPES): void {
     console.log('I am little evee and I want to evolve into: ', type);
     console.log("Evee's state is: ", this.eveeState);
+    if (this.eveeState !== EVEE_TYPES.BASE) {
+      console.log(this.eveeState + " can't evolve into " + type);
+      return;
+    }
     switch (type) {
       case EVEE_TYPES.FLAREON:
         this.evolveEveeEvent.emit(EVEE_TYPES.FLAREON);
-        if (this.eveeState !== EVEE_TYPES.BASE) {
-          this.reset();
-        }
+        this.reset();
         break;
       case EVEE_TYPES.JOLTEON:
         this.evolveEveeEvent.emit(EVEE_TYPES.JOLTEON);
-        if (this.eveeState !== EVEE_TYPES.BASE) {
-          this.reset();
-        }
+        this.reset();
         break;
       case EVEE_TYPES.VAPOREON:
         this.evolveEveeEvent.emit(EVEE_TYPES.VAPOREON);
-        if (this.eveeState !== EVEE_TYPES.BASE) {
-          this.reset();
-        }
+        this.reset();
         break;
     }
   }
