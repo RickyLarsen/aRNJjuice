@@ -20,7 +20,7 @@ export class FullCalendarComponent implements OnInit {
     this.eeveeTime = false;
     setTimeout(() => {
       this.eeveeTime = true;
-    }, 2000);
+    }, 2500);
   }
 
   public addAppointment() {
